@@ -1,131 +1,241 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0f;
+  color: #e0e0ff;
+  overflow-x: hidden;
 }
 
-header {
-    text-align: center;
-    padding: 100px 20px 80px;
-    color: white;
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
-header h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Навігація */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 6%;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.15);
 }
 
-header p {
-    font-size: 1.4rem;
-    opacity: 0.95;
-    font-weight: 300;
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
-main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    margin-top: -50px;
-    position: relative;
+.logo .neon {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
 }
 
-section {
-    margin-bottom: 60px;
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
 }
 
-h2 {
-    font-size: 2.2rem;
-    color: #4a4a4a;
-    margin-bottom: 25px;
-    position: relative;
-    display: inline-block;
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(to right, #667eea, #764ba2);
-    border-radius: 2px;
+.nav-links a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
 }
 
-.about p {
-    font-size: 1.15rem;
-    color: #555;
-    max-width: 700px;
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.projects ul {
-    list-style: none;
+#particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.7;
 }
 
-.projects li {
-    margin: 15px 0;
-    padding: 18px 25px;
-    background: #f8f9ff;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border-left: 5px solid #667eea;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-.projects li:hover {
-    transform: translateX(15px);
-    background: #f0f2ff;
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+.badge {
+  display: inline-block;
+  background: rgba(0, 255, 200, 0.1);
+  color: #00ffcc;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  margin-bottom: 1rem;
 }
 
-.projects a {
-    text-decoration: none;
-    color: #4a4a4a;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s;
+.glitch-text {
+  font-size: 5rem;
+  margin: 0.5rem 0;
+  text-shadow: 
+    0 0 10px #00ffcc,
+    0 0 20px #00ffcc,
+    0 0 40px #ff00cc;
+  animation: glitch 1.5s infinite alternate;
 }
 
-.projects a:hover {
-    color: #667eea;
+.subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
 }
 
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: white;
-    opacity: 0.9;
-    font-size: 1.05rem;
+.neon-btn {
+  padding: 16px 42px;
+  background: transparent;
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Адаптивність */
+.neon-btn:hover {
+  background: #00ffcc;
+  color: #0a0a0f;
+  box-shadow: 0 0 30px #00ffcc,
+              0 0 50px #00ffcc;
+  transform: scale(1.08);
+}
+
+/* Секції */
+.section {
+  padding: 130px 6%;
+  position: relative;
+}
+
+.section h2 {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #fff;
+  text-shadow: 0 0 15px #00ffcc;
+}
+
+/* Glassmorphism картки */
+.skills-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card, .project-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 255, 200, 0.25);
+  border-radius: 20px;
+  padding: 2.2rem 1.8rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover, .project-card:hover {
+  transform: translateY(-15px) rotate(2deg);
+  border-color: #00ffcc;
+  box-shadow: 0 0 35px rgba(0, 255, 200, 0.5);
+}
+
+.project-card .card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,200,0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.project-card:hover .card-glow {
+  opacity: 1;
+}
+
+.project-link {
+  color: #00ffcc;
+  text-decoration: none;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.project-link:hover {
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Форма */
+.contact-form {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,255,200,0.3);
+  padding: 18px 22px;
+  border-radius: 14px;
+  color: white;
+  font-size: 1.05rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #00ffcc;
+  box-shadow: 0 0 15px rgba(0,255,200,0.4);
+}
+
+/* Анімація glitch */
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #ff00cc, -2px -2px #00ffcc; }
+  25% { text-shadow: -2px 2px #ff00cc, 2px -2px #00ffcc; }
+  50% { text-shadow: 2px -2px #ff00cc, -2px 2px #00ffcc; }
+  100% { text-shadow: -2px -2px #ff00cc, 2px 2px #00ffcc; }
+}
+
+/* Адаптив */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2.8rem;
-    }
-    
-    header p {
-        font-size: 1.2rem;
-    }
-    
-    main {
-        margin: 20px 15px;
-        padding: 30px 20px;
-        border-radius: 15px;
-    }
-    
-    h2 {
-        font-size: 1.9rem;
-    }
+  .glitch-text { font-size: 3.2rem; }
+  .nav-links { gap: 1.2rem; font-size: 0.95rem; }
 }
