@@ -3,33 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфоліо Івана Петренка</title>
+  <title>Володимир Соколов | Cyber Developer</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Іван Петренко</h1>
-    <p>Майбутній веброзробник</p>
+    <nav class="navbar">
+      <div class="logo">Volodymyr<span class="neon">Sokolov</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Hero -->
+  <section class="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-content">
+      <div class="badge">FUTURE WEB DEVELOPER</div>
+      <h1 class="glitch-text">Володимир Соколов</h1>
+      <p class="subtitle">Створюю цифрові світи з ии</p>
+      <a href="#projects" class="neon-btn">ЗАПУСТИТИ ПРОЄКТИ</a>
+    </div>
+  </section>
+
   <main>
-    <section class="about">
-      <h2>Про мене</h2>
-      <p>Привіт! Я студент, який навчається створювати сучасні вебсайти. Люблю HTML, CSS та креативний підхід до дизайну.</p>
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>ПРО МЕНЕ</h2>
+      <div class="about-content">
+        <p>.</p>
+        <p>.</p>
+      </div>
     </section>
 
-    <section class="projects">
-      <h2>Мої проєкти</h2>
-      <ul>
-        <li><a href="#">Сайт-візитка</a></li>
-        <li><a href="#">Галерея зображень</a></li>
-        <li><a href="#">Тестовий магазин</a></li>
-      </ul>
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2>ТЕХНОЛОГІЇ</h2>
+      <div class="skills-grid">
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS3 / Glassmorphism</div>
+        <div class="skill-card">JavaScript ES6+</div>
+        <div class="skill-card">Responsive &amp; Animations</div>
+        <div class="skill-card">Git &amp; GitHub</div>
+        <div class="skill-card">Figma / UI Design</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>ПРОЄКТИ</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="card-glow"></div>
+          <h3>Neon Visitka</h3>
+          <p>Сучасна візитка з glitch-ефектами та плавними анімаціями.</p>
+          <a href="#" class="project-link">Переглянути проект →</a>
+        </div>
+        <div class="project-card">
+          <div class="card-glow"></div>
+          <h3>Cyber Gallery</h3>
+          <p>Неонова галерея зображень з фільтрами та модальними вікнами.</p>
+          <a href="#" class="project-link">Переглянути проект →</a>
+        </div>
+        <div class="project-card">
+          <div class="card-glow"></div>
+          <h3>Neon Shop</h3>
+          <p>Тестовий інтернет-магазин з кошиком та динамічними ефектами.</p>
+          <a href="#" class="project-link">Переглянути проект →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>ЗВ'ЯЗАТИСЯ</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="ІМ'Я" required>
+        <input type="email" placeholder="EMAIL" required>
+        <textarea placeholder="ПОВІДОМЛЕННЯ" rows="5" required></textarea>
+        <button type="submit" class="neon-btn">НАДІСЛАТИ СИГНАЛ</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <p>📧 Email: ivan@example.com</p>
+    <p>© 2026 Володимир Соколов • CODED IN THE MATRIX</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
