@@ -57,44 +57,67 @@ resizeCanvas();
 initParticles();
 animate();
 
-// Копіювання контактів
+// Копіювання контактів (працює і на головній, і на сторінках проєктів)
 function copyContacts() {
   const text = `Володимир Соколов
 Cyber Developer
 
 Email: your.email@gmail.com
 Telegram: @yourusername
-Instagram: instagram.com/yourusername
+Instagram: @yourusername
 GitHub: github.com/yourusername
 
 Neon Visitka — цифрова неонова візитка`;
 
   navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.visitka-btn');
-    const original = btn.textContent;
-    btn.textContent = '✅ СКОПІЙОВАНО!';
-    btn.style.background = '#00f7ff';
-    btn.style.color = '#0a0a0f';
+    const btns = document.querySelectorAll('.visitka-btn, .neon-btn');
+    btns.forEach(btn => {
+      if (btn.textContent.includes('СКОПІЮВАТИ') || btn.textContent.includes('КОНТАКТИ')) {
+        const original = btn.innerHTML;
+        btn.innerHTML = '✅ СКОПІЙОВАНО!';
+        btn.style.background = '#00f7ff';
+        btn.style.color = '#0a0a0f';
 
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.style.background = 'transparent';
-      btn.style.color = '#00ffcc';
-    }, 2500);
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.background = 'transparent';
+          btn.style.color = '#00ffcc';
+        }, 2500);
+      }
+    });
   });
 }
 
-// Додатковий випадковий glitch
-setInterval(() => {
-  const glitch = document.querySelector('.neon-visitka .glitch');
-  if (glitch) {
-    glitch.style.animation = 'none';
-    void glitch.offsetWidth;
-    glitch.style.animation = 'glitchSkew 0.7s linear';
-    setTimeout(() => {
-      glitch.style.animation = 'glitchSkew 4s linear infinite alternate-reverse';
-    }, 800);
-  }
-}, 5500);
+// Додатковий випадковий glitch для Neon Visitka (на головній та на сторінці проєкту)
+function addRandomGlitch() {
+  const glitchElements = document.querySelectorAll('.glitch');
+  glitchElements.forEach(glitch => {
+    if (glitch) {
+      glitch.style.animation = 'none';
+      void glitch.offsetWidth; // reflow
+      glitch.style.animation = 'glitchSkew 0.7s linear';
+      
+      setTimeout(() => {
+        glitch.style.animation = 'glitchSkew 4s linear infinite alternate-reverse';
+      }, 800);
+    }
+  });
+}
 
-console.log('%c✅ Сайт з Neon Visitka успішно завантажено!', 'color:#00ffcc; font-size:16px;');
+// Запуск випадкового glitch кожні 4-7 секунд
+setInterval(addRandomGlitch, 5500);
+
+// Додатковий ефект для неонових кнопок "Переглянути"
+document.addEventListener('DOMContentLoaded', () => {
+  const viewBtns = document.querySelectorAll('.neon-view-btn');
+  viewBtns.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      btn.style.letterSpacing = '4px';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.letterSpacing = '2px';
+    });
+  });
+});
+
+console.log('%c✅ Neon Portfolio з виділеною кнопкою "Переглянути" завантажено!', 'color:#00ffcc; font-size:16px; font-weight:bold;');

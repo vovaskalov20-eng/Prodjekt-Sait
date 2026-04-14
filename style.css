@@ -60,10 +60,10 @@ h1, h2, h3 {
   text-shadow: 0 0 8px #00ffcc;
 }
 
-/* Hero */
+/* HERO */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,6 +83,8 @@ h1, h2, h3 {
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
 }
 
 .badge {
@@ -99,10 +101,7 @@ h1, h2, h3 {
 .glitch-text {
   font-size: 5rem;
   margin: 0.5rem 0;
-  text-shadow: 
-    0 0 10px #00ffcc,
-    0 0 20px #00ffcc,
-    0 0 40px #ff00cc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #ff00cc;
   animation: glitch 1.5s infinite alternate;
 }
 
@@ -112,6 +111,111 @@ h1, h2, h3 {
   opacity: 0.9;
 }
 
+/* Neon Visitka */
+.neon-visitka {
+  margin-top: 80px;
+  background: rgba(15, 5, 35, 0.92);
+  border: 5px solid #00f7ff;
+  border-radius: 24px;
+  padding: 45px 35px 55px;
+  box-shadow: 0 0 40px #00f7ff, 0 0 80px #ff00aa, inset 0 0 40px rgba(255,255,255,0.08);
+  animation: cardFloat 7s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.neon-visitka .avatar {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  border: 7px solid #bb00ff;
+  overflow: hidden;
+  box-shadow: 0 0 40px #00f7ff;
+  transition: all 0.5s ease;
+}
+
+.neon-visitka .avatar:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 0 60px #ff00aa;
+}
+
+.neon-visitka .avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.neon-visitka .glitch {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #ffffff;
+  position: relative;
+  text-shadow: 4px 0 0 #00f7ff, -4px 0 0 #ff00aa, 0 0 25px #bb00ff;
+  animation: glitchSkew 4s linear infinite alternate-reverse;
+}
+
+.neon-visitka .glitch::before,
+.neon-visitka .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.neon-visitka .glitch::before {
+  color: #00f7ff;
+  animation: glitchAnim1 2s infinite linear alternate-reverse;
+  left: 4px;
+}
+
+.neon-visitka .glitch::after {
+  color: #ff00aa;
+  animation: glitchAnim2 2.6s infinite linear alternate-reverse;
+  left: -4px;
+}
+
+.neon-visitka .visitka-title {
+  font-size: 1.55rem;
+  color: #ff00aa;
+  text-shadow: 0 0 20px #ff00aa;
+  margin: 12px 0 25px;
+}
+
+.neon-visitka .visitka-bio {
+  max-width: 420px;
+  margin: 0 auto 35px;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+.visitka-contacts {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 35px 0;
+}
+
+.contact-link {
+  font-size: 2.3rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #00f7ff;
+  transform: scale(1.4) translateY(-5px);
+  text-shadow: 0 0 25px #00f7ff;
+}
+
+.visitka-btn {
+  margin-top: 10px;
+}
+
+/* Кнопки */
 .neon-btn {
   padding: 16px 42px;
   background: transparent;
@@ -124,13 +228,13 @@ h1, h2, h3 {
   transition: all 0.4s;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .neon-btn:hover {
   background: #00ffcc;
   color: #0a0a0f;
-  box-shadow: 0 0 30px #00ffcc,
-              0 0 50px #00ffcc;
+  box-shadow: 0 0 30px #00ffcc, 0 0 50px #00ffcc;
   transform: scale(1.08);
 }
 
@@ -148,7 +252,6 @@ h1, h2, h3 {
   text-shadow: 0 0 15px #00ffcc;
 }
 
-/* Glassmorphism картки */
 .skills-grid, .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -176,10 +279,8 @@ h1, h2, h3 {
 
 .project-card .card-glow {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
   background: radial-gradient(circle, rgba(0,255,200,0.15) 0%, transparent 70%);
   opacity: 0;
   transition: 0.6s;
@@ -196,11 +297,6 @@ h1, h2, h3 {
   display: inline-block;
 }
 
-.project-link:hover {
-  text-shadow: 0 0 10px #00ffcc;
-}
-
-/* Форма */
 .contact-form {
   max-width: 620px;
   margin: 0 auto;
@@ -226,7 +322,7 @@ h1, h2, h3 {
   box-shadow: 0 0 15px rgba(0,255,200,0.4);
 }
 
-/* Анімація glitch */
+/* Glitch анімації */
 @keyframes glitch {
   0% { text-shadow: 2px 2px #ff00cc, -2px -2px #00ffcc; }
   25% { text-shadow: -2px 2px #ff00cc, 2px -2px #00ffcc; }
@@ -234,8 +330,82 @@ h1, h2, h3 {
   100% { text-shadow: -2px -2px #ff00cc, 2px 2px #00ffcc; }
 }
 
+@keyframes glitchSkew {
+  0% { transform: skew(0deg); }
+  10% { transform: skew(8deg); }
+  20% { transform: skew(-6deg); }
+  30% { transform: skew(4deg); }
+  100% { transform: skew(0deg); }
+}
+
+@keyframes glitchAnim1 {
+  0% { clip: rect(20px, 9999px, 50px, 0); }
+  5% { clip: rect(80px, 9999px, 110px, 0); }
+  10% { clip: rect(10px, 9999px, 40px, 0); }
+  15% { clip: rect(70px, 9999px, 95px, 0); }
+  20% { clip: rect(30px, 9999px, 65px, 0); }
+  100% { clip: rect(45px, 9999px, 85px, 0); }
+}
+
+@keyframes glitchAnim2 {
+  0% { clip: rect(65px, 9999px, 95px, 0); }
+  5% { clip: rect(25px, 9999px, 55px, 0); }
+  10% { clip: rect(85px, 9999px, 120px, 0); }
+  15% { clip: rect(15px, 9999px, 45px, 0); }
+  100% { clip: rect(55px, 9999px, 80px, 0); }
+}
+
 /* Адаптив */
 @media (max-width: 768px) {
   .glitch-text { font-size: 3.2rem; }
+  .neon-visitka .glitch { font-size: 2.6rem; }
   .nav-links { gap: 1.2rem; font-size: 0.95rem; }
+}
+
+/* Виділена неонова кнопка "Переглянути" */
+.neon-view-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 32px;
+  background: transparent;
+  color: #00ffcc;
+  border: 3px solid #00ffcc;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-view-btn:hover {
+  background: #00ffcc;
+  color: #0a0a0f;
+  box-shadow: 0 0 30px #00ffcc,
+              0 0 50px #00ffcc;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.neon-view-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transition: 0.7s;
+}
+
+.neon-view-btn:hover::before {
+  left: 120%;
 }

@@ -6,8 +6,10 @@
   <title>Володимир Соколов | Cyber Developer</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
   <header>
     <nav class="navbar">
       <div class="logo">Volodymyr<span class="neon">Sokolov</span></div>
@@ -21,75 +23,92 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <canvas id="particles"></canvas>
     <div class="hero-content">
       <div class="badge">FUTURE WEB DEVELOPER</div>
       <h1 class="glitch-text">Володимир Соколов</h1>
-      <p class="subtitle">Створюю цифрові світи з ии</p>
+      <p class="subtitle">Створюю цифрові світи з неоновим кодом</p>
       <a href="#projects" class="neon-btn">ЗАПУСТИТИ ПРОЄКТИ</a>
+
+      <div class="neon-visitka">
+        <div class="avatar">
+          <img src="https://picsum.photos/id/1005/600/600" alt="Володимир Соколов">
+        </div>
+        <h2 class="glitch" data-text="NEON VISITKA">NEON VISITKA</h2>
+        <p class="visitka-title">Cyber Developer &amp; Digital Artist</p>
+        <p class="visitka-bio">
+          Кіберпанк-розробник. Створюю потужні візуальні веб-досвіди з glitch-ефектами та неоновими анімаціями.
+        </p>
+
+        <div class="visitka-contacts">
+          <a href="mailto:your.email@gmail.com" class="contact-link"><i class="fas fa-envelope"></i></a>
+          <a href="https://t.me/yourusername" class="contact-link"><i class="fab fa-telegram-plane"></i></a>
+          <a href="https://instagram.com/yourusername" class="contact-link"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/yourusername" class="contact-link"><i class="fab fa-github"></i></a>
+        </div>
+
+        <button onclick="copyContacts()" class="neon-btn visitka-btn">СКОПІЮВАТИ КОНТАКТИ</button>
+      </div>
     </div>
   </section>
 
-  <main>
-    <!-- About -->
-    <section id="about" class="section">
-      <h2>ПРО МЕНЕ</h2>
-      <div class="about-content">
-        <p>.</p>
-        <p>.</p>
-      </div>
-    </section>
+  <!-- PROJECTS з виділеною неоновою кнопкою -->
+  <section id="projects" class="section">
+    <h2>ПРОЄКТИ</h2>
+    <div class="projects-grid">
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <h2>ТЕХНОЛОГІЇ</h2>
-      <div class="skills-grid">
-        <div class="skill-card">HTML5</div>
-        <div class="skill-card">CSS3 / Glassmorphism</div>
-        <div class="skill-card">JavaScript ES6+</div>
-        <div class="skill-card">Responsive &amp; Animations</div>
-        <div class="skill-card">Git &amp; GitHub</div>
-        <div class="skill-card">Figma / UI Design</div>
+      <div class="project-card">
+        <div class="card-glow"></div>
+        <h3>Neon Visitka</h3>
+        <p>Сучасна цифрова візитка з glitch-ефектами та плавними неоновими анімаціями.</p>
+        <a href="projects/neon-visitka/index.html" class="project-link neon-view-btn">Переглянути →</a>
       </div>
-    </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <h2>ПРОЄКТИ</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="card-glow"></div>
-          <h3>Neon Visitka</h3>
-          <p>Сучасна візитка з glitch-ефектами та плавними анімаціями.</p>
-          <a href="#" class="project-link">Переглянути проект →</a>
-        </div>
-        <div class="project-card">
-          <div class="card-glow"></div>
-          <h3>Cyber Gallery</h3>
-          <p>Неонова галерея зображень з фільтрами та модальними вікнами.</p>
-          <a href="#" class="project-link">Переглянути проект →</a>
-        </div>
-        <div class="project-card">
-          <div class="card-glow"></div>
-          <h3>Neon Shop</h3>
-          <p>Тестовий інтернет-магазин з кошиком та динамічними ефектами.</p>
-          <a href="#" class="project-link">Переглянути проект →</a>
-        </div>
+      <div class="project-card">
+        <div class="card-glow"></div>
+        <h3>Cyber Gallery</h3>
+        <p>Неонова галерея з зображеннями та інтерактивними фільтрами.</p>
+        <a href="projects/cyber-gallery/index.html" class="project-link neon-view-btn">Переглянути →</a>
       </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <h2>ЗВ'ЯЗАТИСЯ</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="ІМ'Я" required>
-        <input type="email" placeholder="EMAIL" required>
-        <textarea placeholder="ПОВІДОМЛЕННЯ" rows="5" required></textarea>
-        <button type="submit" class="neon-btn">НАДІСЛАТИ СИГНАЛ</button>
-      </form>
-    </section>
-  </main>
+      <div class="project-card">
+        <div class="card-glow"></div>
+        <h3>Neon Shop</h3>
+        <p>Тестовий інтернет-магазин з динамічним кошиком.</p>
+        <a href="projects/neon-shop/index.html" class="project-link neon-view-btn">Переглянути →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>ПРО МЕНЕ</h2>
+    <div class="about-content">
+      <p>Тут буде твоя інформація про себе.</p>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>ТЕХНОЛОГІЇ</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML5</div>
+      <div class="skill-card">CSS3 / Glassmorphism</div>
+      <div class="skill-card">JavaScript ES6+</div>
+      <div class="skill-card">Neon & Glitch Animations</div>
+      <div class="skill-card">Figma / UI Design</div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>ЗВ'ЯЗАТИСЯ</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="ІМ'Я" required>
+      <input type="email" placeholder="EMAIL" required>
+      <textarea placeholder="ПОВІДОМЛЕННЯ" rows="5" required></textarea>
+      <button type="submit" class="neon-btn">НАДІСЛАТИ СИГНАЛ</button>
+    </form>
+  </section>
 
   <footer>
     <p>© 2026 Володимир Соколов • CODED IN THE MATRIX</p>
