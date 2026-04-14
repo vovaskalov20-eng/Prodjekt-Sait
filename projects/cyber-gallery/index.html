@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Gallery — Володимир Соколов</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { background: #0a001f; }
+    .gallery-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .gallery-item {
+      height: 320px;
+      background: linear-gradient(135deg, #ff00aa, #00f7ff);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255, 0, 170, 0.5);
+      transition: all 0.4s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px rgba(255, 0, 170, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery-hero">
+    <h1 style="font-size: 4rem; color: #ff00aa; text-shadow: 0 0 40px #ff00aa;">CYBER GALLERY</h1>
+    <p style="font-size: 1.5rem; max-width: 700px; margin: 20px auto;">
+      Неонова галерея з зображеннями та інтерактивними фільтрами
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+
+    <a href="../../index.html" class="neon-btn" style="margin-top: 60px;">
+      ← Повернутися на головну
+    </a>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
